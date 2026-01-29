@@ -1,0 +1,205 @@
+/* Report Page Styles */
+
+.report-page {
+    padding-bottom: var(--spacing-2xl);
+}
+
+/* Report Preview */
+.report-preview {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+}
+
+.report-section {
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.report-section:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.report-section-title {
+    font-size: 1.3rem;
+    color: var(--primary-light);
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Summary Grid */
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.summary-item {
+    background: var(--bg-elevated);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    text-align: center;
+}
+
+.summary-label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.summary-value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.summary-value.player-a {
+    color: var(--player-a);
+}
+
+.summary-value.player-b {
+    color: var(--player-b);
+}
+
+/* Rally Timeline */
+.rally-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.rally-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--bg-elevated);
+    border-radius: var(--radius-md);
+}
+
+.rally-number {
+    font-weight: 600;
+    color: var(--primary-light);
+    min-width: 40px;
+}
+
+.rally-duration {
+    color: var(--text-secondary);
+    min-width: 50px;
+}
+
+.rally-winner {
+    font-weight: 500;
+    min-width: 100px;
+}
+
+.rally-winner.player-a {
+    color: var(--player-a);
+}
+
+.rally-winner.player-b {
+    color: var(--player-b);
+}
+
+.rally-shots {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.rally-more {
+    text-align: center;
+    color: var(--text-muted);
+    padding: var(--spacing-md);
+    font-style: italic;
+}
+
+/* Mistake Summary */
+.mistake-summary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+}
+
+.mistake-player h4 {
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.1rem;
+}
+
+.mistake-player ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.mistake-player li {
+    padding: var(--spacing-xs) 0;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.mistake-player li::before {
+    content: '• ';
+    color: var(--danger);
+}
+
+/* PDF Contents */
+.pdf-contents {
+    background: linear-gradient(135deg, rgba(40, 116, 166, 0.1), rgba(39, 174, 96, 0.05));
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg);
+    margin: 0 calc(-1 * var(--spacing-xl));
+    margin-bottom: calc(-1 * var(--spacing-xl));
+    border-top: 2px solid var(--primary);
+}
+
+.pdf-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-sm);
+}
+
+.pdf-list li {
+    padding: var(--spacing-xs) 0;
+    color: var(--text-secondary);
+}
+
+/* Report Actions */
+.report-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.report-actions .error-message {
+    background: rgba(231, 76, 60, 0.1);
+    border: 1px solid var(--danger);
+    color: var(--danger);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .mistake-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .rally-item {
+        flex-wrap: wrap;
+    }
+
+    .pdf-list {
+        grid-template-columns: 1fr;
+    }
+}
