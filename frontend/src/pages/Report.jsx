@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import { API_BASE_URL } from '../config'
 import './Report.css'
 
 function Report({ sessionData, analysisResults }) {
@@ -32,7 +33,7 @@ function Report({ sessionData, analysisResults }) {
     }
 
     const downloadReport = () => {
-        window.open(`/api/report/${sessionData.session_id}/download`, '_blank')
+        window.open(`${API_BASE_URL}/api/report/${sessionData.session_id}/download`, '_blank')
     }
 
     if (!sessionData || !analysisResults) {

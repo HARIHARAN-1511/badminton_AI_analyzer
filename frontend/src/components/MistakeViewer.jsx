@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { API_BASE_URL } from '../config';
 import './MistakeViewer.css';
 
 const MistakeViewer = ({ mistakes, sessionId }) => {
@@ -282,7 +283,7 @@ const MistakeViewer = ({ mistakes, sessionId }) => {
                                 </h4>
                                 <div className="modal-clip-container">
                                     <img
-                                        src={`/api/analyze/${sessionId}/mistake/${selectedMistake.mistake_id}/clip`}
+                                        src={`${API_BASE_URL}/api/analyze/${sessionId}/mistake/${selectedMistake.mistake_id}/clip`}
                                         alt={`Mistake: ${selectedMistake.description}`}
                                         className="modal-mistake-gif"
                                         onError={(e) => {
